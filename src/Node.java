@@ -5,8 +5,7 @@ public class Node {
     private String locationFlag;
     private String[] rightItems;
     private String[] leftItems;
-    private ArrayList<Node> neighbors;
-    private ArrayList<Double> weights;
+    private ArrayList<Edge> neighbors;
 
     public Node(int id, String locationFlag, String[] rightItems, String[] leftItems){
         this.id = id;
@@ -14,11 +13,29 @@ public class Node {
         this.rightItems = rightItems;
         this.leftItems = leftItems;
         neighbors = new ArrayList<>();
-        weights = new ArrayList<>();
     }
 
     public void addNeighbor(Node neighbor, double weight){
-        neighbors.add(neighbor);
-        weights.add(weight);
+        neighbors.add(new Edge(neighbor, weight));
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getLocationFlag() {
+        return locationFlag;
+    }
+
+    public ArrayList<Edge> getNeighbors() {
+        return neighbors;
+    }
+
+    public String[] getLeftItems() {
+        return leftItems;
+    }
+
+    public String[] getRightItems() {
+        return rightItems;
     }
 }
