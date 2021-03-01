@@ -15,8 +15,11 @@ public class Node {
         neighbors = new ArrayList<>();
     }
 
+    public void addNeighbor(Edge edge){
+        neighbors.add(edge);
+    }
     public void addNeighbor(Node neighbor, double weight){
-        neighbors.add(new Edge(neighbor, weight));
+        neighbors.add(new Edge(-1, neighbor, weight));
     }
 
     public int getId() {
