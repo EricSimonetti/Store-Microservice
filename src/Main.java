@@ -63,6 +63,7 @@ public class Main {
         current = nextClosest;
         while(current.getParent()!=null){
             nextClosestPath.add(0, current);
+            current = current.getParent();
         }
         return nextClosestPath;
     }
