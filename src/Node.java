@@ -18,8 +18,11 @@ public class Node {
         pathLength = Double.MAX_VALUE;
     }
 
+    public void addNeighbor(Edge edge){
+        neighbors.add(edge);
+    }
     public void addNeighbor(Node neighbor, double weight){
-        neighbors.add(new Edge(neighbor, weight));
+        neighbors.add(new Edge(-1, neighbor, weight));
     }
 
     public int getId() {
@@ -40,6 +43,14 @@ public class Node {
 
     public ArrayList<String> getRightItems() {
         return rightItems;
+    }
+
+    public void addLeftItems(String item) {
+        leftItems.add(item);
+    }
+
+    public void addRightItems(String item) {
+        rightItems.add(item);
     }
 
     public double getPathLength() {

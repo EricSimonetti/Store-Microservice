@@ -4,8 +4,11 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        Node entranceNode = new Node(0, "", null, null);
+        NodeParser nodes = new NodeParser();
+        nodes.loadNodes(nodes.testNodes);
+        nodes.loadItems(nodes.testItems);
 
+        Node entranceNode = nodes.getRoot();
     }
 
     private void createGraph(Node node){
