@@ -8,10 +8,107 @@ public class NodeParser {
     private HashMap<Integer, Node> nodeMap;
     private List<Node> nodeList;
 
+    public List<Map<String,Object>> testNodes;
+    public List<Map<String,Object>> testItems;
+
     public NodeParser(){
         Node root = null;
         nodeMap = new LinkedHashMap<>();
         nodeList = new ArrayList<>();
+        testNodes = new ArrayList<>();
+        testItems = new ArrayList<>();
+        initTestNodes();
+        initTestItems();
+
+    }
+
+    private void initTestItems() {
+        Map<String,Object>tmp;
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",3);
+        tmp.put("catName","tomatoes");
+        tmp.put("side","left");
+        testItems.add(tmp);
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",3);
+        tmp.put("catName","lettuce");
+        tmp.put("side","right");
+        testItems.add(tmp);
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",2);
+        tmp.put("catName","flour");
+        tmp.put("side","right");
+        testItems.add(tmp);
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",5);
+        tmp.put("catName","eggs");
+        tmp.put("side","left");
+        testItems.add(tmp);
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",4);
+        tmp.put("catName","ice cream");
+        tmp.put("side","right");
+        testItems.add(tmp);
+    }
+
+    public void initTestNodes(){
+        Map<String,Object>tmp;
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",1);
+        tmp.put("westNodeID",2);
+        tmp.put("westNodeDistance",2);
+        tmp.put("eastNodeID",3);
+        tmp.put("eastNodeDistance",2);
+        testNodes.add(tmp);
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",2);
+        tmp.put("northNodeID",5);
+        tmp.put("northNodeDistance",1);
+        tmp.put("southNodeID",1);
+        tmp.put("southNodeDistance",2);
+        tmp.put("eastNodeID",3);
+        tmp.put("eastNodeDistance",2);
+        tmp.put("westNodeID",4);
+        tmp.put("westNodeDistance",1);
+        testNodes.add(tmp);
+
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",3);
+        tmp.put("northNodeID",5);
+        tmp.put("northNodeDistance",3);
+        tmp.put("southNodeID",1);
+        tmp.put("southNodeDistance",2);
+        tmp.put("westNodeID",2);
+        tmp.put("westNodeDistance",2);
+        testNodes.add(tmp);
+
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",4);
+        tmp.put("southNodeID",2);
+        tmp.put("southNodeDistance",1);
+        tmp.put("eastNodeID",3);
+        tmp.put("eastNodeDistance",1);
+        testNodes.add(tmp);
+
+
+        tmp = new HashMap<>();
+        tmp.put("nodeID",5);
+        tmp.put("southNodeID",2);
+        tmp.put("southNodeDistance",3);
+        tmp.put("eastNodeID",3);
+        tmp.put("eastNodeDistance",3);
+        tmp.put("westNodeID",4);
+        tmp.put("westNodeDistance",1);
+        testNodes.add(tmp);
     }
 
     public Node getRoot(){
@@ -63,7 +160,7 @@ public class NodeParser {
                         edge = new Edge(adjId, null, adjWeight);
                         node.addNeighbor(edge);
                     }
-                    adjId = queryData.getInt("wsetNodeID");
+                    adjId = queryData.getInt("westNodeID");
                     if (adjId > 0) {
                         adjWeight = queryData.getInt("westNodeDistance");
                         edge = new Edge(adjId, null, adjWeight);
@@ -99,34 +196,34 @@ public class NodeParser {
         int i = 0;
         Map<String,Object> queryData;
 
-        while(dataList.get(i) != null) {
+        while(i < dataList.size()) {
             queryData = dataList.get(i);
             id = (Integer)queryData.get("nodeID");
             if (id > 0) {
-                node = new Node(id, null, null, null);
+                node = new Node(id, null, new ArrayList<>(), new ArrayList<>());
                 if(id == 1){
                     root = node;
                 }
-                adjId = (Integer)queryData.get("northNodeID");
-                if (adjId > 0) {
+                if (queryData.get("northNodeID") != null) {
+                    adjId = (Integer)queryData.get("northNodeID");
                     adjWeight = (Integer)queryData.get("northNodeDistance");
                     edge = new Edge(adjId, null, adjWeight);
                     node.addNeighbor(edge);
                 }
-                adjId = (Integer)queryData.get("eastNodeID");
-                if (adjId > 0) {
+                if (queryData.get("eastNodeID") != null) {
+                    adjId = (Integer)queryData.get("eastNodeID");
                     adjWeight = (Integer)queryData.get("eastNodeDistance");
                     edge = new Edge(adjId, null, adjWeight);
                     node.addNeighbor(edge);
                 }
-                adjId = (Integer)queryData.get("wsetNodeID");
-                if (adjId > 0) {
+                if (queryData.get("westNodeID") != null) {
+                    adjId = (Integer)queryData.get("westNodeID");
                     adjWeight = (Integer)queryData.get("westNodeDistance");
                     edge = new Edge(adjId, null, adjWeight);
                     node.addNeighbor(edge);
                 }
-                adjId = (Integer)queryData.get("southNodeID");
-                if (adjId > 0) {
+                if (queryData.get("southNodeID") != null) {
+                    adjId = (Integer)queryData.get("southNodeID");
                     adjWeight = (Integer)queryData.get("southNodeDistance");
                     edge = new Edge(adjId, null, adjWeight);
                     node.addNeighbor(edge);
@@ -145,7 +242,7 @@ public class NodeParser {
         int id;
         int i = 0;
         Map<String,Object> queryData;
-        while(dataList.get(i) != null) {
+        while(i < dataList.size()) {
             queryData = dataList.get(i);
             id = (Integer)queryData.get("nodeID");
             if (id > 0) {
