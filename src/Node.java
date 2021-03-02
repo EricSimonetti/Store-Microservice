@@ -45,6 +45,14 @@ public class Node {
         return rightItems;
     }
 
+    public void addLeftItems(String item) {
+        leftItems.add(item);
+    }
+
+    public void addRightItems(String item) {
+        rightItems.add(item);
+    }
+
     public double getPathLength() {
         return pathLength;
     }

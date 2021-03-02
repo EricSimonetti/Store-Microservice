@@ -33,7 +33,7 @@ public class NodeParser {
         }
     }
 
-    public void parse(ResultSet queryData){
+    public void loadNodes(ResultSet queryData){
         Node node;
 
         int id;
@@ -87,7 +87,7 @@ public class NodeParser {
         process();
     }
 
-    public void parse(List<Map<String,Object>> dataList){
+    public void loadNodes(List<Map<String,Object>> dataList){
         Node node;
 
         int id;
@@ -97,9 +97,10 @@ public class NodeParser {
 
         Edge edge;
         int i = 0;
+        Map<String,Object> queryData;
 
         while(dataList.get(i) != null) {
-            Map<String,Object> queryData = dataList.get(i);
+            queryData = dataList.get(i);
             id = (Integer)queryData.get("nodeID");
             if (id > 0) {
                 node = new Node(id, null, null, null);
@@ -139,4 +140,24 @@ public class NodeParser {
         process();
     }
 
+    public void loadItems(List<Map<String,Object>> dataList){
+        Node node;
+        int id;
+        int i = 0;
+        Map<String,Object> queryData;
+        while(dataList.get(i) != null) {
+            queryData = dataList.get(i);
+            id = (Integer)queryData.get("nodeID");
+            if (id > 0) {
+                node = nodeMap.get(id);
+                if(queryData.get("side").equals("left")){
+                    node.addLeftItems((String) queryData.get("catName"));
+                } else {
+                    node.addRightItems((String) queryData.get("catName"));
+                }
+            }
+            i++;
+        }
+        process();
+    }
 }
