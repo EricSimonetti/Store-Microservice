@@ -26,14 +26,44 @@ public class NodeParser {
         Map<String,Object>tmp;
 
         tmp = new HashMap<>();
-        tmp.put("nodeID",7);
-        tmp.put("catName","tomatoes");
+        tmp.put("nodeID",1);
+        tmp.put("catName","air");
         tmp.put("side","right");
         testItems.add(tmp);
-
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",2);
+        tmp.put("catName","carrots");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",3);
+        tmp.put("catName","apples");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
         tmp = new HashMap<>();
         tmp.put("nodeID",4);
         tmp.put("catName","lettuce");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",5);
+        tmp.put("catName","eggs");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",6);
+        tmp.put("catName","bananas");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",7);
+        tmp.put("catName","tomatoes");
         tmp.put("side","right");
         testItems.add(tmp);
 
@@ -44,9 +74,69 @@ public class NodeParser {
         testItems.add(tmp);
 
         tmp = new HashMap<>();
-        tmp.put("nodeID",5);
-        tmp.put("catName","eggs");
+        tmp.put("nodeID",9);
+        tmp.put("catName","chips");
         tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",10);
+        tmp.put("catName","bread");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",11);
+        tmp.put("catName","discount dvds");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",12);
+        tmp.put("catName","peanut butter");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",13);
+        tmp.put("catName","pizza");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",14);
+        tmp.put("catName","cookies");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",15);
+        tmp.put("catName","tupleware");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",16);
+        tmp.put("catName","aprons");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",17);
+        tmp.put("catName","shoes");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",18);
+        tmp.put("catName","ham");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",19);
+        tmp.put("catName","turkey");
+        tmp.put("side","right");
         testItems.add(tmp);
 
         tmp = new HashMap<>();
@@ -56,9 +146,21 @@ public class NodeParser {
         testItems.add(tmp);
         
         tmp = new HashMap<>();
-        tmp.put("nodeID",15);
-        tmp.put("catName","tupleware");
+        tmp.put("nodeID",21);
+        tmp.put("catName","lobster");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",22);
+        tmp.put("catName","cheese");
         tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",23);
+        tmp.put("catName","socks");
+        tmp.put("side","right");
         testItems.add(tmp);
 
         tmp = new HashMap<>();
@@ -66,6 +168,32 @@ public class NodeParser {
         tmp.put("catName","ice cream");
         tmp.put("side","left");
         testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",25);
+        tmp.put("catName","beans");
+        tmp.put("side","right");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",26);
+        tmp.put("catName","milk");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        tmp = new HashMap<>();
+        tmp.put("nodeID",27);
+        tmp.put("catName","gum");
+        tmp.put("side","left");
+        testItems.add(tmp);
+        
+        /*
+        tmp = new HashMap<>();
+        tmp.put("nodeID",);
+        tmp.put("catName","");
+        tmp.put("side","");
+        testItems.add(tmp);
+        */
     }
 
     public void initTestNodes(){
@@ -140,8 +268,8 @@ public class NodeParser {
         tmp.put("nodeID",8);
         tmp.put("southNodeID",6);
         tmp.put("southNodeDistance",4);
-        tmp.put("northNodeID",9);
-        tmp.put("northNodeDistance",5);
+        tmp.put("westNodeID",9);
+        tmp.put("westNodeDistance",5);
         testNodes.add(tmp);
         
         tmp = new HashMap<>();
@@ -320,9 +448,9 @@ public class NodeParser {
         tmp.put("southNodeDistance",);
         tmp.put("northNodeID",);
         tmp.put("northNodeDistance",);
-        tmp.put("eastNodeID",);
+        tmp.put("eastNode",);
         tmp.put("eastNodeDistance",);
-        tmp.put("westNodeID",);
+        tmp.put("westNode",);
         tmp.put("westNodeDistance",);
         testNodes.add(tmp);*/
     }

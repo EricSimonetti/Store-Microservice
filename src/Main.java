@@ -10,10 +10,7 @@ public class Main {
 
         Node entranceNode = nodes.getRoot();
         ArrayList<String> items = new ArrayList<>();
-        items.add("lettuce");
-        items.add("flour");
-        items.add("fish");
-        items.add("tupleware");
+        items.add("gum");
 
         ArrayList<Node> shortishPath = findShortishPath(entranceNode, items);
         printPath(shortishPath);
