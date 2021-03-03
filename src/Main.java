@@ -43,7 +43,6 @@ public class Main {
             current = queue.remove(0);
 
             for(Edge e : current.getNeighbors()){
-                System.out.println("searching " + e.getNode().getId() + " from " + current.getId());
                 Node edgeNode = e.getNode();
                 double newPathLength = e.getWeight() + current.getPathLength();
                 if(newPathLength < edgeNode.getPathLength()) {
@@ -51,9 +50,9 @@ public class Main {
                     edgeNode.setParent(current);
                     if (edgeNode.getPathLength() < nextClosest.getPathLength()) {             //if the node is closer than the closest required node
                         queue.add(edgeNode);
-                        if (current.getLeftItems().stream().anyMatch(items::contains) ||    //if the node is a required node
-                                current.getRightItems().stream().anyMatch(items::contains)) {
-                            nextClosest = current;                                         //set that node as nextClosest
+                        if (edgeNode.getLeftItems().stream().anyMatch(items::contains) ||    //if the node is a required node
+                                edgeNode.getRightItems().stream().anyMatch(items::contains)) {
+                            nextClosest = edgeNode;                                         //set that node as nextClosest
                         }
                     }
                 }
