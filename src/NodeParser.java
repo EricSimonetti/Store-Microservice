@@ -269,7 +269,7 @@ public class NodeParser {
         tmp.put("southNodeID",6);
         tmp.put("southNodeDistance",4);
         tmp.put("westNodeID",9);
-        tmp.put("northNodeDistance",5);
+        tmp.put("westNodeDistance",5);
         testNodes.add(tmp);
         
         tmp = new HashMap<>();
