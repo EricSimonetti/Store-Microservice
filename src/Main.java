@@ -9,13 +9,17 @@ public class Main {
         nodes.loadItems(nodes.testItems);
 
         Node entranceNode = nodes.getRoot();
+        ArrayList<String> items = new ArrayList<>();
+        items.add("lettuce");
+        items.add("flour");
+        items.add("fish");
+        items.add("tupleware");
+
+        ArrayList<Node> shortishPath = findShortishPath(entranceNode, items);
+        printPath(shortishPath);
     }
 
-    private void createGraph(Node node){
-
-    }
-
-    private ArrayList<Node> findShortishPath(Node entrance, ArrayList<String> items){
+    private static ArrayList<Node> findShortishPath(Node entrance, ArrayList<String> items){
         ArrayList<Node> shortishPath = new ArrayList<>();
         Node source = entrance;
 
@@ -27,7 +31,7 @@ public class Main {
         return shortishPath;
     }
 
-    private ArrayList<Node> dijkstra(Node source, ArrayList<String> items){
+    private static ArrayList<Node> dijkstra(Node source, ArrayList<String> items){
         Node nextClosest = new Node(0, "", null, null);
         ArrayList<Node> queue = new ArrayList<>();
 
@@ -72,7 +76,7 @@ public class Main {
         return nextClosestPath;
     }
 
-    private void resetDijkstra(Node source){
+    private static void resetDijkstra(Node source){
         ArrayList<Node> queue = new ArrayList<>();
         Node current = source;
         queue.add(current);
@@ -89,6 +93,20 @@ public class Main {
                     queue.add(edgeNode);
                 }
             }
+        }
+    }
+
+    private static void printPath(ArrayList<Node> path){
+        for(Node node : path){
+            System.out.println("right items:");
+            for(String item : node.getRightItems()){
+                System.out.println(item);
+            }
+            System.out.println("left items:");
+            for(String item : node.getLeftItems()){
+                System.out.println(item);
+            }
+            System.out.println();
         }
     }
 }
