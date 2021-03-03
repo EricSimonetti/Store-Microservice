@@ -226,7 +226,7 @@ public class NodeParser {
         tmp.put("southNodeDistance",4);
         tmp.put("westNodeID",13);
         tmp.put("westNodeDistance",7);
-        tmp.put("eastNode",2);
+        tmp.put("eastNodeID",2);
         tmp.put("eastNodeDistance",5);
         testNodes.add(tmp);
 
@@ -278,7 +278,7 @@ public class NodeParser {
         tmp.put("southNodeDistance",4);
         tmp.put("northNodeID",10);
         tmp.put("northNodeDistance",1);
-        tmp.put("eastNode",8);
+        tmp.put("eastNodeID",8);
         tmp.put("eastNodeDistance",5);
         testNodes.add(tmp);
         
@@ -286,7 +286,7 @@ public class NodeParser {
         tmp.put("nodeID",10);
         tmp.put("southNodeID",9);
         tmp.put("southNodeDistance",1);
-        tmp.put("westNode",11);
+        tmp.put("westNodeID",11);
         tmp.put("westNodeDistance",7);
         testNodes.add(tmp);
         
@@ -294,9 +294,9 @@ public class NodeParser {
         tmp.put("nodeID",11);
         tmp.put("southNodeID",12);
         tmp.put("southNodeDistance",7);
-        tmp.put("eastNode",10);
+        tmp.put("eastNodeID",10);
         tmp.put("eastNodeDistance",7);
-        tmp.put("westNode",14);
+        tmp.put("westNodeID",14);
         tmp.put("westNodeDistance",4);
         testNodes.add(tmp);
         
@@ -312,9 +312,9 @@ public class NodeParser {
         tmp.put("nodeID",13);
         tmp.put("northNodeID",12);
         tmp.put("northNodeDistance",5);
-        tmp.put("eastNode",3);
+        tmp.put("eastNodeID",3);
         tmp.put("eastNodeDistance",7);
-        tmp.put("westNode",16);
+        tmp.put("westNodeID",16);
         tmp.put("westNodeDistance",4);
         testNodes.add(tmp);
         
@@ -322,9 +322,9 @@ public class NodeParser {
         tmp.put("nodeID",14);
         tmp.put("southNodeID",15);
         tmp.put("southNodeDistance",7);
-        tmp.put("eastNode",11);
+        tmp.put("eastNodeID",11);
         tmp.put("eastNodeDistance",4);
-        tmp.put("westNode",20);
+        tmp.put("westNodeID",20);
         tmp.put("westNodeDistance",4);
         testNodes.add(tmp);
         
@@ -342,7 +342,7 @@ public class NodeParser {
         tmp.put("southNodeDistance",3);
         tmp.put("northNodeID",15);
         tmp.put("northNodeDistance",5);
-        tmp.put("eastNode",13);
+        tmp.put("eastNodeID",13);
         tmp.put("eastNodeDistance",3);
         testNodes.add(tmp);
         
@@ -350,7 +350,7 @@ public class NodeParser {
         tmp.put("nodeID",17);
         tmp.put("northNodeID",16);
         tmp.put("northNodeDistance",3);
-        tmp.put("westNode",18);
+        tmp.put("westNodeID",18);
         tmp.put("westNodeDistance",4);
         testNodes.add(tmp);
         
@@ -358,9 +358,9 @@ public class NodeParser {
         tmp.put("nodeID",18);
         tmp.put("northNodeID",19);
         tmp.put("northNodeDistance",8);
-        tmp.put("eastNode",17);
+        tmp.put("eastNodeID",17);
         tmp.put("eastNodeDistance",4);
-        tmp.put("westNode",23);
+        tmp.put("westNodeID",23);
         tmp.put("westNodeDistance",5);
         testNodes.add(tmp);
         
@@ -376,9 +376,9 @@ public class NodeParser {
         tmp.put("nodeID",20);
         tmp.put("southNodeID",19);
         tmp.put("southNodeDistance",7);
-        tmp.put("eastNode",14);
+        tmp.put("eastNodeID",14);
         tmp.put("eastNodeDistance",4);
-        tmp.put("westNode",21);
+        tmp.put("westNodeID",21);
         tmp.put("westNodeDistance",5);
         testNodes.add(tmp);
         
@@ -386,9 +386,9 @@ public class NodeParser {
         tmp.put("nodeID",21);
         tmp.put("southNodeID",22);
         tmp.put("southNodeDistance",7);
-        tmp.put("eastNode",20);
+        tmp.put("eastNodeID",20);
         tmp.put("eastNodeDistance",5);
-        tmp.put("westNode",26);
+        tmp.put("westNodeID",26);
         tmp.put("westNodeDistance",5);
         testNodes.add(tmp);
         
@@ -404,9 +404,9 @@ public class NodeParser {
         tmp.put("nodeID",23);
         tmp.put("northNodeID",22);
         tmp.put("northNodeDistance",8);
-        tmp.put("eastNode",18);
+        tmp.put("eastNodeID",18);
         tmp.put("eastNodeDistance",5);
-        tmp.put("westNode",24);
+        tmp.put("westNodeID",24);
         tmp.put("westNodeDistance",5);
         testNodes.add(tmp);
         
@@ -414,7 +414,7 @@ public class NodeParser {
         tmp.put("nodeID",24);
         tmp.put("northNodeID",25);
         tmp.put("northNodeDistance",8);
-        tmp.put("eastNode",23);
+        tmp.put("eastNodeID",23);
         tmp.put("eastNodeDistance",5);
         testNodes.add(tmp);
         
@@ -430,7 +430,7 @@ public class NodeParser {
         tmp.put("nodeID",26);
         tmp.put("southNodeID",25);
         tmp.put("southNodeDistance",7);
-        tmp.put("eastNode",21);
+        tmp.put("eastNodeID",21);
         tmp.put("eastNodeDistance",5);
         testNodes.add(tmp);
         
@@ -438,7 +438,7 @@ public class NodeParser {
         tmp.put("nodeID",27);
         tmp.put("northNodeID",3);
         tmp.put("northNodeDistance",4);
-        tmp.put("eastNode",1);
+        tmp.put("eastNodeID",1);
         tmp.put("eastNodeDistance",5);
         testNodes.add(tmp);
         
