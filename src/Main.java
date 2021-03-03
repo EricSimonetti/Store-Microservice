@@ -21,25 +21,12 @@ public class Main {
 
     private static ArrayList<Node> findShortishPath(Node entrance, ArrayList<String> items){
         ArrayList<Node> shortishPath = new ArrayList<>();
+        shortishPath.add(entrance);
         Node source = entrance;
 
         while(items.size()>0){
-            for(String item : items){
-                System.out.println(item);
-            }
-            System.out.println();
             shortishPath.addAll(dijkstra(source, items));      //do dijkstra to find next closest required node + concat path to next node
-            System.out.println(shortishPath.size());
             source = shortishPath.get(shortishPath.size()-1);  //set source to the next closest required node
-            /* test print
-            for(String item : source.getRightItems()){
-                System.out.println(item);
-            }
-            for(String item : source.getLeftItems()){
-                System.out.println(item);
-            }
-            System.out.println();
-             */
         }
 
         return shortishPath;
@@ -78,16 +65,12 @@ public class Main {
             nextClosestPath.add(0, current);
             current = current.getParent();
         }
-        if(nextClosest.getLeftItems()!=null) {
-            items.removeAll(nextClosest.getLeftItems().stream()   //remove matching items in nextClosest from the
-                    .filter(items::contains)                      //set we're searching for
-                    .collect(Collectors.toList()));
-        }
-        if(nextClosest.getRightItems()!=null) {
-            items.removeAll(nextClosest.getRightItems().stream()
-                    .filter(items::contains)
-                    .collect(Collectors.toList()));
-        }
+        items.removeAll(nextClosest.getLeftItems().stream()   //remove matching items in nextClosest from the
+                .filter(items::contains)                      //set we're searching for
+                .collect(Collectors.toList()));
+        items.removeAll(nextClosest.getRightItems().stream()
+                .filter(items::contains)
+                .collect(Collectors.toList()));
         resetDijkstra(source);                                //reset values and parents
         return nextClosestPath;
     }
@@ -114,15 +97,7 @@ public class Main {
 
     private static void printPath(ArrayList<Node> path){
         for(Node node : path){
-            System.out.println("right items:");
-            for(String item : node.getRightItems()){
-                System.out.println(item);
-            }
-            System.out.println("left items:");
-            for(String item : node.getLeftItems()){
-                System.out.println(item);
-            }
-            System.out.println();
+            System.out.println(node.getId());
         }
     }
 }
