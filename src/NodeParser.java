@@ -140,7 +140,7 @@ public class NodeParser {
         tmp.put("nodeID",8);
         tmp.put("southNodeID",6);
         tmp.put("southNodeDistance",4);
-        tmp.put("westNodeID",9);
+        tmp.put("northNodeID",9);
         tmp.put("northNodeDistance",5);
         testNodes.add(tmp);
         
