@@ -2,7 +2,14 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class Main {
-
+    /**
+    * Sets up a node parser and loads it with the test nodes/items. 
+    * Finds the root node of the graph and adds items to the list.
+    * Runs the algorithm to find the shortest path and prints it.
+    *
+    * @param args An array of run time parameters - not used in the current context of the program.
+    * @see NodeParser
+    */
     public static void main(String[] args) {
         NodeParser nodes = new NodeParser();
         nodes.loadNodes(nodes.testNodes);
@@ -16,6 +23,15 @@ public class Main {
         printPath(shortishPath);
     }
 
+    /**
+    * Uses the entrance node of the graph as a starting point to traverse through the graph to
+    * look for the items in the provided list.
+    *
+    * @param entrance The root node of the graph to traverse.
+    * @param items The list of items to search for in the algorithm. Items provided not present in any node will result in 
+    * a null pointer exception.
+    * @return The list of nodes that form the path to all the items.
+    */
     private static ArrayList<Node> findShortishPath(Node entrance, ArrayList<String> items){
         ArrayList<Node> shortishPath = new ArrayList<>();
         shortishPath.add(entrance);
