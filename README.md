@@ -1,5 +1,5 @@
 ### Store Microservice
-A Microservice made for my software design class project. The project is a webapplication that leads a customer through a store on an optimized path that includes every item they are looking for.
+A Microservice made for my software design class project. The project is a webapplication that leads a customer through a store on an optimized path that includes every item they are looking for. To run the server use the command mvn liberty run in the directory of the cloned repo. By default ports 9081 and 9444 are used for http and https respectively.
 
 The store microservice has four endpoints:
 
