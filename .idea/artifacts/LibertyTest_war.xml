@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="LibertyTest:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>LibertyTest</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="starter-app.war">
+      <element id="artifact" artifact-name="LibertyTest:war exploded" />
+    </root>
+  </artifact>
+</component>
