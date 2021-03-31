@@ -1,7 +1,9 @@
 ### Store Microservice
-A Microservice made for my software design class project. The project is a webapplication that leads a customer through a store on an optimized path that includes every item they are looking for. To run the server use the command mvn liberty run in the directory of the cloned repo. By default ports 9081 and 9444 are used for http and https respectively.
+A Microservice made for my software design class project. The project is a webapplication that leads a customer through a store on an optimized path that includes every item they are looking for.
 
-The store microservice has four endpoints:
+To run the server use the command "mvn liberty:run" in the directory of the cloned repo. By default ports 9081 and 9444 are used for http and https respectively.
+
+### Endpoints:
 
 POST request endpoint to <server>/store/nav, which takes a list of items, or multiple lists of items (if an employee is shopping multiple lists for different customers), and returns a list of directions, optimized using a modified dijkstra's algorithm, that the employee or customer would follow. When this endpoint is used for the first time it must communicate with the database to pull all the stores information to build a graph of the store that is traversed for path optimization. This means the firs trequest will take slightly longer (around 100ms).
   
