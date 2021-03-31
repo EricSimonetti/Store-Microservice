@@ -7,11 +7,11 @@ To run the server use the command "mvn liberty:run" in the directory of the clon
 
 POST request endpoint to <server>/store/nav, which takes a list of items, or multiple lists of items (if an employee is shopping multiple lists for different customers), and returns a list of directions, optimized using a modified dijkstra's algorithm, that the employee or customer would follow. When this endpoint is used for the first time it must communicate with the database to pull all the stores information to build a graph of the store that is traversed for path optimization. This means the firs trequest will take slightly longer (around 100ms).
   
-POST request endpoint to <server>/store/update, which takes a list of edited items, a list of their old locations, and a list of new items, and adds them to the database
+POST request endpoint to serverip:serverport/store/update, which takes a list of edited items, a list of their old locations, and a list of new items, and adds them to the database
 
-POST request endpoint to <server>/store/search, which recieves a string that is matched against item's names in the database and returns matching items that are also in stock
+POST request endpoint to serverip:serverport/store/search, which recieves a string that is matched against item's names in the database and returns matching items that are also in stock
   
-GET request endpoint to <server>/store/items, which returns all item names and their current stock
+GET request endpoint to serverip:serverport/store/items, which returns all item names and their current stock
   
 
 ### server.env
